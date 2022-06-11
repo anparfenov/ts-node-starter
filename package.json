@@ -1,0 +1,34 @@
+{
+    "name": "ts-node-starter",
+    "version": "1.0.0",
+    "description": "Typescript node starter with es modules and testing support",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "ts-node src/index.ts",
+        "build": "npm run build:lib && npm run build:types",
+        "build:lib": "rollup -c",
+        "build:types": "tsc --project tsconfig.declaration.json",
+        "compile": "tsc",
+        "test": "NODE_OPTIONS='--experimental-specifier-resolution=node' uvu -r tsm ./tests"
+    },
+    "keywords": ["starter", "typescript", "node"],
+    "author": {
+		"name": "Andrey Parfenov",
+		"email": "asleeppiano@outlook.com",
+		"url": "andreyparfenov.com"
+	},
+    "license": "MIT",
+	"main": "./dist/bundle.node.js",
+	"types": "./dist/types/index.d.ts",
+	"engines": {
+		"node": ">=14"
+	},
+    "repository": "https://github.com/moody-person/ts-node-starter",
+    "devDependencies": {
+        "ts-node": "^10.8.1",
+        "tsm": "^2.2.1",
+        "typescript": "^4.7.3",
+        "uvu": "^0.5.3"
+    }
+}
